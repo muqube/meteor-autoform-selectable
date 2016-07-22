@@ -25,5 +25,5 @@ Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
   api.use('autoform-selectable');
-  api.mainModule('meteor-autoform-selectable-tests.js');
+  api.mainModule('autoform-selectable-tests.js');
 });
