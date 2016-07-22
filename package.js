@@ -2,7 +2,7 @@ Package.describe({
   name: 'muqube:autoform-selectable',
   version: '0.0.1',
   summary: 'Single and multiple selection widget for autoform',
-  git: '',
+  git: 'https://github.com/muqube/meteor-autoform-selectable',
   documentation: 'README.md'
 });
 
