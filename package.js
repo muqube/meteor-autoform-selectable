@@ -21,9 +21,9 @@ Package.onUse(function(api) {
   ], 'client');
 });
 
-Package.onTest(function(api) {
-  api.use('ecmascript');
-  api.use('tinytest');
-  api.use('autoform-selectable');
-  api.mainModule('autoform-selectable-tests.js');
-});
+//Package.onTest(function(api) {
+//  api.use('ecmascript');
+//  api.use('tinytest');
+//  api.use('autoform-selectable');
+//  api.mainModule('autoform-selectable-tests.js');
+//});
