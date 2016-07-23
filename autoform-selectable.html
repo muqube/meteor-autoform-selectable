@@ -1,7 +1,7 @@
 <template name="afSelectable">
     <div class="autoform-selectable-container" {{atts}}>
         {{#each option in options}}
-            <div class="selectable-option" data-value="{{option.value}}">{{option.label}}</div>
+            <div class="{{isOptionSelected option.value}} selectable-option" data-value="{{option.value}}">{{option.label}}</div>
         {{/each}}
     </div>
 </template>

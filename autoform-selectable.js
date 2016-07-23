@@ -8,7 +8,7 @@ export const name = 'muqube:autoform-selectable';
 
 AutoForm.addInputType("selectable", {
     template: "afSelectable",
-    valueOut: function(){
+    valueOut: function() {
         const data = this.data();
         let selection = this.find('.selected.selectable-option');
 
@@ -35,6 +35,18 @@ Template.afSelectable.helpers({
     },
     isMultipleSelect() {
         var data = Template.currentData(); // get data reactively
+    },
+    isOptionSelected (option) {
+        const value = Template.currentData().value;
+        let isSelected = false;
+
+        if (Array.isArray(value)) {
+            isSelected = value.indexOf(option) != -1;
+        } else {
+            isSelected = option === value;
+        }
+
+        return (isSelected)? "selected" : "" ;
     },
     options() {
         var data = Template.currentData(); // get data reactively
