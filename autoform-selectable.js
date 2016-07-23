@@ -33,9 +33,6 @@ Template.afSelectable.helpers({
 
         return atts;
     },
-    isMultipleSelect() {
-        var data = Template.currentData();
-    },
     isOptionSelected (option) {
         const value = Template.currentData().value;
         let isSelected = false;
@@ -56,10 +53,19 @@ Template.afSelectable.helpers({
 
 Template.afSelectable.events({
     'click .selectable-option'(e, t) {
-        const target = $(e.target);
-        const isMultiple = t && t.data && t.data.atts && t.data.atts.multiple;
-        target.toggleClass('selected');
-        if (!isMultiple) {
+        const target = $(e.target),
+            isMultiple = t && t.data && t.data.atts && t.data.atts.multiple,
+            isSelected = target.hasClass('selected'),
+            numSelected = t.findAll('.selected.selectable-option').length,
+            min = t.data.atts.min || Number.MIN_SAFE_INTEGER,
+            max = t.data.atts.max || Number.MAX_SAFE_INTEGER;
+        
+        if (isMultiple){ 
+            if ( ((min < numSelected) && isSelected) || ((numSelected < max) && !isSelected) ) {
+                target.toggleClass('selected');
+            }
+        } else {
+            target.toggleClass('selected');
             target.siblings().removeClass('selected');
         }
     }
