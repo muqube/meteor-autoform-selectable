@@ -26,7 +26,7 @@ AutoForm.addInputType("selectable", {
 
 Template.afSelectable.helpers({
     atts: function () {
-        var data = Template.currentData(); // get data reactively
+        var data = Template.currentData();
         var atts = data.atts;
         atts["data-multiple"] = data.atts["multiple"];
         atts["data-schema-key"] = data.atts["data-schema-key"];
@@ -34,7 +34,7 @@ Template.afSelectable.helpers({
         return atts;
     },
     isMultipleSelect() {
-        var data = Template.currentData(); // get data reactively
+        var data = Template.currentData();
     },
     isOptionSelected (option) {
         const value = Template.currentData().value;
@@ -49,7 +49,7 @@ Template.afSelectable.helpers({
         return (isSelected)? "selected" : "" ;
     },
     options() {
-        var data = Template.currentData(); // get data reactively
+        var data = Template.currentData();
         return data.selectOptions;
     }
 });
