@@ -1,8 +1,8 @@
 Package.describe({
   name: 'muqube:autoform-selectable',
-  version: '0.0.1',
+  version: '0.0.3',
   summary: 'Single and multiple selection widget for autoform',
-  git: '',
+  git: 'https://github.com/muqube/meteor-autoform-selectable',
   documentation: 'README.md'
 });
 
@@ -21,9 +21,9 @@ Package.onUse(function(api) {
   ], 'client');
 });
 
-Package.onTest(function(api) {
-  api.use('ecmascript');
-  api.use('tinytest');
-  api.use('autoform-selectable');
-  api.mainModule('meteor-autoform-selectable-tests.js');
-});
+//Package.onTest(function(api) {
+//  api.use('ecmascript');
+//  api.use('tinytest');
+//  api.use('autoform-selectable');
+//  api.mainModule('autoform-selectable-tests.js');
+//});
